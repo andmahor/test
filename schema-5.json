@@ -32,17 +32,17 @@
     "type": {
       "anyOf": [
         {
-          "$ref": "#/definitions"
+          "$ref": "#/definitions/simpleTypes"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions"
+            "$ref": "#/definitions/simpleTypes"
           },
           "minItems": 1,
           "uniqueItems": true
         }
       ]
-    }    
+    },   
   }
 }
