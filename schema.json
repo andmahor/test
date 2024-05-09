@@ -1,18 +1,32 @@
 {
-    "title": "JSON schema for NPM package.json files",
-    "properties": {
-      "name": {
-        "description": "The name of the package.",
-        "type": "string"
-      },
-      "fields": {
-        "description": "The name of the package.",
-        "type": "string"
-      },
-      "version": {
-        "description": "The name of the package.",
-        "type": "string"
-      }
+  "title": "JSON schema for NPM package.json files",
+  "properties": {
+    "name": {
+      "description": "The name of the package.",
+      "type": "string"
+    },
+    "fields": {
+      "description": "The name of the package.",
+      "type": "string"
+    },
+    "version": {
+      "description": "The name of the package.",
+      "type": "string"
+    },
+    "type": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/simpleTypes"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/simpleTypes"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      ]
     }
- }
- 
+  }
+}
