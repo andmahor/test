@@ -29,6 +29,12 @@
       "description": "The name of the package.",
       "type": "string"
     },
+    "enum": {
+      "type": "array",
+      "items": true,
+      "minItems": 1,
+      "uniqueItems": true
+    },
     "type": {
       "anyOf": [
         {
