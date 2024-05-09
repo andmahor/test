@@ -1,5 +1,18 @@
 {
   "title": "JSON schema for NPM package.json files",
+  "definitions": {
+    "simpleTypes": {
+      "enum": [
+        "array",
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "object",
+        "string"
+      ]
+    }
+  },
   "properties": {
     "name": {
       "description": "The name of the package.",
@@ -19,6 +32,25 @@
           "$ref": "#/definitions/simpleTypes"
         },
         {
+          "type": "object",
+          "allOf": [
+            {
+              "not": {
+                "type": "array"
+              }
+            },
+            {
+              "properties": {
+                "$ref": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": ["$ref"]
+            }
+          ]
+        },
+        {
           "type": "array",
           "items": {
             "$ref": "#/definitions/simpleTypes"
@@ -28,5 +60,6 @@
         }
       ]
     }
+    
   }
 }
