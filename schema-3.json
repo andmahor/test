@@ -32,12 +32,12 @@
     "type": {
       "anyOf": [
         {
-          "$ref": "#/definitions/*"
+          "$ref": "#/definitions"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/*"
+            "$ref": "#/definitions"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -46,4 +46,3 @@
     }    
   }
 }
-
