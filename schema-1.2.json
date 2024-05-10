@@ -207,12 +207,12 @@
     "type": {
       "anyOf": [
         {
-          "$ref": "#/definitions/simpleTypes"
+          "$ref": "#/definitions"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/simpleTypes"
+            "$ref": "#/definitions"
           },
           "minItems": 1,
           "uniqueItems": true
