@@ -1,0 +1,33 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "definitions": {
+      "simpleTypes": {
+         "enum": [
+            "array",
+            "boolean",
+            "integer",
+            "null",
+            "number",
+            "object",
+            "string"
+         ]
+      }
+   },
+   "properties": {
+      "parent": {
+         "anyOf": [
+            {
+               "$ref": "#/definitions/simpleTypes"
+            },
+            {
+               "type": "array",
+               "items": {
+                  "$ref": "#/definitions/simpleTypes"
+               },
+               "minItems": 1,
+               "uniqueItems": true
+            }
+         ]
+      }   
+   }
+}
